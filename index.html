@@ -1,32 +1,43 @@
 <html>
-  <head>
+<head>
     <title>London Usage Map</title>
     <style>
-       #container {
-         padding: 10px;
-       }
-       #usage-table {
-        font: 100% sans-serif;
-        border-spacing: 0.2em;
-      }
-      #usage-table td {
-        padding: 5px;
-        height: 50px;
-        width: 50px;
-      }
-      .show {
-        background-color: rgba(0,102,0,1);
-      }
+        #container {
+            padding: 10px;
+        }
+
+        #usage-table {
+            font: 100% sans-serif;
+            border-spacing: 0.2em;
+        }
+
+        #usage-table td {
+            padding: 5px;
+            height: 50px;
+            width: 50px;
+        }
+
+        .show {
+            background-color: rgba(0, 102, 0, 1);
+        }
     </style>
 
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.14/angular.min.js"></script>
+    <script src="js/app.js"></script>
     <script src="js/script.js"></script>
+    <script src="js/directives/postal-area.js"></script>
 
-  </head>
-  <body>
-    <div id='container'>
-      <table id='usage-table'>
+</head>
+<body ng-app="app" ng-controller="MainCtrl">
+<div id='container'>
+    <ul>
+        <li ng-repeat="area in postalAreas">
+            <postal-area area="area"></postal-area>
+        </li>
+    </ul>
+    <table id='usage-table'>
         <tbody>
-          <tr>
+        <tr>
             <td class='hidden'></td>
             <td class='hidden'></td>
             <td id='postcode-0' class='show'></td>
@@ -37,8 +48,8 @@
             <td id='postcode-5' class='show'></td>
             <td class='hidden'></td>
             <td class='hidden'></td>
-          </tr>
-          <tr>
+        </tr>
+        <tr>
             <td class='hidden'></td>
             <td id='postcode-6' class='show'></td>
             <td id='postcode-7' class='show'></td>
@@ -49,8 +60,8 @@
             <td id='postcode-12' class='show'></td>
             <td id='postcode-13' class='show'></td>
             <td class='hidden'></td>
-          </tr>
-          <tr>
+        </tr>
+        <tr>
             <td id='postcode-14' class='show'></td>
             <td id='postcode-15' class='show'></td>
             <td id='postcode-16' class='show'></td>
@@ -61,8 +72,8 @@
             <td id='postcode-21' class='show'></td>
             <td id='postcode-22' class='show'></td>
             <td id='postcode-23' class='show'></td>
-          </tr>
-          <tr>
+        </tr>
+        <tr>
             <td class='hidden'></td>
             <td id='postcode-24' class='show'></td>
             <td id='postcode-25' class='show'></td>
@@ -73,8 +84,8 @@
             <td id='postcode-30' class='show'></td>
             <td id='postcode-31' class='show'></td>
             <td class='hidden'></td>
-          </tr>
-          <tr>
+        </tr>
+        <tr>
             <td class='hidden'></td>
             <td class='hidden'></td>
             <td id='postcode-32' class='show'></td>
@@ -85,9 +96,9 @@
             <td id='postcode-37' class='show'></td>
             <td class='hidden'></td>
             <td class='hidden'></td>
-          </tr>
+        </tr>
         </tbody>
-      </table>
-    </div>
-  </body>
+    </table>
+</div>
+</body>
 </html>
