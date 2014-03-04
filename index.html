@@ -1,0 +1,110 @@
+<html>
+  <head>
+    <title>London Usage Map</title>
+    <style>
+       #container {
+         padding: 10px;
+       }
+       #usage-table {
+        font: 100% sans-serif;
+        border-spacing: 0.2em;
+      }
+      #usage-table td {
+        padding: 5px;
+        height: 50px;
+        width: 50px;
+      }
+      .show {
+        background-color: rgba(0,102,0,1);
+      }
+    </style>
+  </head>
+  <body>
+    <div id='container'>
+      <table id='usage-table'>
+        <tbody>
+          <tr>
+            <td class='hidden'></td>
+            <td class='hidden'></td>
+            <td id='postcode-0' class='show'></td>
+            <td id='postcode-1' class='show'></td>
+            <td id='postcode-2' class='show'></td>
+            <td id='postcode-3' class='show'></td>
+            <td id='postcode-4' class='show'></td>
+            <td id='postcode-5' class='show'></td>
+            <td class='hidden'></td>
+            <td class='hidden'></td>
+          </tr>
+          <tr>
+            <td class='hidden'></td>
+            <td id='postcode-6' class='show'></td>
+            <td id='postcode-7' class='show'></td>
+            <td id='postcode-8' class='show'></td>
+            <td id='postcode-9' class='show'></td>
+            <td id='postcode-10' class='show'></td>
+            <td id='postcode-11' class='show'></td>
+            <td id='postcode-12' class='show'></td>
+            <td id='postcode-13' class='show'></td>
+            <td class='hidden'></td>
+          </tr>
+          <tr>
+            <td id='postcode-14' class='show'></td>
+            <td id='postcode-15' class='show'></td>
+            <td id='postcode-16' class='show'></td>
+            <td id='postcode-17' class='show'></td>
+            <td id='postcode-18' class='show'></td>
+            <td id='postcode-19' class='show'></td>
+            <td id='postcode-20' class='show'></td>
+            <td id='postcode-21' class='show'></td>
+            <td id='postcode-22' class='show'></td>
+            <td id='postcode-23' class='show'></td>
+          </tr>
+          <tr>
+            <td class='hidden'></td>
+            <td id='postcode-24' class='show'></td>
+            <td id='postcode-25' class='show'></td>
+            <td id='postcode-26' class='show'></td>
+            <td id='postcode-27' class='show'></td>
+            <td id='postcode-28' class='show'></td>
+            <td id='postcode-29' class='show'></td>
+            <td id='postcode-30' class='show'></td>
+            <td id='postcode-31' class='show'></td>
+            <td class='hidden'></td>
+          </tr>
+          <tr>
+            <td class='hidden'></td>
+            <td class='hidden'></td>
+            <td id='postcode-32' class='show'></td>
+            <td id='postcode-33' class='show'></td>
+            <td id='postcode-34' class='show'></td>
+            <td id='postcode-35' class='show'></td>
+            <td id='postcode-36' class='show'></td>
+            <td id='postcode-37' class='show'></td>
+            <td class='hidden'></td>
+            <td class='hidden'></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <script>
+      window.addEventListener('load', function() {
+          console.log(' ++ extra skenky');
+          var count = 0;
+          var results = {};
+          var timeout = window.setInterval(function() {
+             if (count > 100) {
+               window.clearInterval(timeout);
+             }
+             var id = Math.floor(Math.random() * 37);
+             var cell_id = '#postcode-' + id;
+             var cell = document.querySelector(cell_id);
+             var opacity = results[cell_id] ? (results[cell_id] * 0.8) : 0.8;
+             cell.style.backgroundColor = 'rgba(0,102,0,' + opacity + ')';
+             results[cell_id] = opacity;
+
+             count++;
+          }, 1000);
+      }, false);
+    </script>
+  </body>
+</html>
