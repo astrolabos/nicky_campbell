@@ -18,6 +18,9 @@
         background-color: rgba(0,102,0,1);
       }
     </style>
+
+    <script src="js/script.js"></script>
+
   </head>
   <body>
     <div id='container'>
@@ -86,25 +89,5 @@
         </tbody>
       </table>
     </div>
-    <script>
-      window.addEventListener('load', function() {
-          console.log(' ++ extra skenky');
-          var count = 0;
-          var results = {};
-          var timeout = window.setInterval(function() {
-             if (count > 100) {
-               window.clearInterval(timeout);
-             }
-             var id = Math.floor(Math.random() * 37);
-             var cell_id = '#postcode-' + id;
-             var cell = document.querySelector(cell_id);
-             var opacity = results[cell_id] ? (results[cell_id] * 0.8) : 0.8;
-             cell.style.backgroundColor = 'rgba(0,102,0,' + opacity + ')';
-             results[cell_id] = opacity;
-
-             count++;
-          }, 1000);
-      }, false);
-    </script>
   </body>
 </html>
