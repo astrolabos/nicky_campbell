@@ -9,8 +9,9 @@ angular.module('components', [])
             controller: function ($scope, $element) {
 
             },
-            template: '<div style="background-color: rgba(0, 102, 0, {{ postalArea.energy }});">' +
-                '{{ postalArea.name }} - {{ postalArea.energy }}</div>',
+            template: '<div class="area-dir"' +
+                'style="background-color: rgba(0, 102, 0, {{ postalArea.energy }});">' +
+                '&nbsp;</div>',
             replace: true
         };
     })

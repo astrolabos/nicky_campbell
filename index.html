@@ -3,102 +3,78 @@
     <title>London Usage Map</title>
     <style>
         #container {
-            padding: 10px;
+            width: 100%;
+            margin: 20px auto;
+            clear: both;
         }
 
-        #usage-table {
-            font: 100% sans-serif;
-            border-spacing: 0.2em;
+        .area {
+            margin: 4px auto;
+            clear: both;
+            text-align: center;
         }
 
-        #usage-table td {
-            padding: 5px;
-            height: 50px;
+        .area-dir {
             width: 50px;
-        }
-
-        .show {
-            background-color: rgba(0, 102, 0, 1);
+            height: 50px;
+            display: inline-block;
         }
     </style>
 
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.14/angular.min.js"></script>
     <script src="js/app.js"></script>
-    <script src="js/script.js"></script>
     <script src="js/directives/postal-area.js"></script>
 
 </head>
 <body ng-app="app" ng-controller="MainCtrl">
-<div id='container'>
-    <ul>
-        <li ng-repeat="area in postalAreas">
-            <postal-area area="area"></postal-area>
-        </li>
-    </ul>
-    <table id='usage-table'>
-        <tbody>
-        <tr>
-            <td class='hidden'></td>
-            <td class='hidden'></td>
-            <td id='postcode-0' class='show'></td>
-            <td id='postcode-1' class='show'></td>
-            <td id='postcode-2' class='show'></td>
-            <td id='postcode-3' class='show'></td>
-            <td id='postcode-4' class='show'></td>
-            <td id='postcode-5' class='show'></td>
-            <td class='hidden'></td>
-            <td class='hidden'></td>
-        </tr>
-        <tr>
-            <td class='hidden'></td>
-            <td id='postcode-6' class='show'></td>
-            <td id='postcode-7' class='show'></td>
-            <td id='postcode-8' class='show'></td>
-            <td id='postcode-9' class='show'></td>
-            <td id='postcode-10' class='show'></td>
-            <td id='postcode-11' class='show'></td>
-            <td id='postcode-12' class='show'></td>
-            <td id='postcode-13' class='show'></td>
-            <td class='hidden'></td>
-        </tr>
-        <tr>
-            <td id='postcode-14' class='show'></td>
-            <td id='postcode-15' class='show'></td>
-            <td id='postcode-16' class='show'></td>
-            <td id='postcode-17' class='show'></td>
-            <td id='postcode-18' class='show'></td>
-            <td id='postcode-19' class='show'></td>
-            <td id='postcode-20' class='show'></td>
-            <td id='postcode-21' class='show'></td>
-            <td id='postcode-22' class='show'></td>
-            <td id='postcode-23' class='show'></td>
-        </tr>
-        <tr>
-            <td class='hidden'></td>
-            <td id='postcode-24' class='show'></td>
-            <td id='postcode-25' class='show'></td>
-            <td id='postcode-26' class='show'></td>
-            <td id='postcode-27' class='show'></td>
-            <td id='postcode-28' class='show'></td>
-            <td id='postcode-29' class='show'></td>
-            <td id='postcode-30' class='show'></td>
-            <td id='postcode-31' class='show'></td>
-            <td class='hidden'></td>
-        </tr>
-        <tr>
-            <td class='hidden'></td>
-            <td class='hidden'></td>
-            <td id='postcode-32' class='show'></td>
-            <td id='postcode-33' class='show'></td>
-            <td id='postcode-34' class='show'></td>
-            <td id='postcode-35' class='show'></td>
-            <td id='postcode-36' class='show'></td>
-            <td id='postcode-37' class='show'></td>
-            <td class='hidden'></td>
-            <td class='hidden'></td>
-        </tr>
-        </tbody>
-    </table>
+<div id="container">
+    <div class='area'>
+        <postal-area area="postalAreas[0]"></postal-area>
+        <postal-area area="postalAreas[1]"></postal-area>
+        <postal-area area="postalAreas[2]"></postal-area>
+        <postal-area area="postalAreas[3]"></postal-area>
+        <postal-area area="postalAreas[4]"></postal-area>
+    </div>
+    <div class='area'>
+        <postal-area area="postalAreas[6]"></postal-area>
+        <postal-area area="postalAreas[7]"></postal-area>
+        <postal-area area="postalAreas[8]"></postal-area>
+        <postal-area area="postalAreas[9]"></postal-area>
+        <postal-area area="postalAreas[10]"></postal-area>
+        <postal-area area="postalAreas[11]"></postal-area>
+        <postal-area area="postalAreas[12]"></postal-area>
+        <postal-area area="postalAreas[13]"></postal-area>
+    </div>
+    <div class='area'>
+        <postal-area area="postalAreas[14]"></postal-area>
+        <postal-area area="postalAreas[15]"></postal-area>
+        <postal-area area="postalAreas[16]"></postal-area>
+        <postal-area area="postalAreas[17]"></postal-area>
+        <postal-area area="postalAreas[18]"></postal-area>
+        <postal-area area="postalAreas[19]"></postal-area>
+        <postal-area area="postalAreas[20]"></postal-area>
+        <postal-area area="postalAreas[21]"></postal-area>
+        <postal-area area="postalAreas[22]"></postal-area>
+        <postal-area area="postalAreas[23]"></postal-area>
+    </div>
+    <div class='area'>
+        <postal-area area="postalAreas[24]"></postal-area>
+        <postal-area area="postalAreas[25]"></postal-area>
+        <postal-area area="postalAreas[26]"></postal-area>
+        <postal-area area="postalAreas[27]"></postal-area>
+        <postal-area area="postalAreas[28]"></postal-area>
+        <postal-area area="postalAreas[29]"></postal-area>
+        <postal-area area="postalAreas[30]"></postal-area>
+        <postal-area area="postalAreas[31]"></postal-area>
+    </div>
+    <div class='area'>
+        <postal-area area="postalAreas[32]"></postal-area>
+        <postal-area area="postalAreas[33]"></postal-area>
+        <postal-area area="postalAreas[34]"></postal-area>
+        <postal-area area="postalAreas[35]"></postal-area>
+        <postal-area area="postalAreas[36]"></postal-area>
+        <postal-area area="postalAreas[37]"></postal-area>
+    </div>
 </div>
 </body>
 </html>
